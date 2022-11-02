@@ -496,5 +496,80 @@
       <link_name>propeller</link_name>
     </plugin>
 
+    <link name="hook">
+      <pose>0 -0.2 0.1 0 0 0</pose>
+      <inertial>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <iyy>0.0001</iyy>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision_inf">
+        <pose>0 0 0 0.1396 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.02 0.3 0.005</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="collision_tope">
+        <pose>0 0.1485    0.0309 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.02 0.005 0.02</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <collision name="collision_sup">
+        <pose>0 0    0.0618 -0.1396 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.02 0.3 0.005</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="inferior">
+        <pose>0 0 0 0.1396 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.02 0.3 0.005</size>
+          </box>
+        </geometry>
+      </visual>
+
+      <visual name="tope">
+        <pose>0 0.1485    0.0309 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.02 0.005 0.02</size>
+          </box>
+        </geometry>
+      </visual>
+
+      <visual name="superior">
+        <pose>0 0    0.0618 -0.1396 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.02 0.3 0.005</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="hook_joint" type="fixed">
+      <origin>
+        <xyz>0 0 0</xyz>
+        <rpy>0 0 0</rpy>
+      </origin>
+      <parent>wing</parent>
+      <child>hook</child>
+    </joint>
+
   </model>
 </sdf>

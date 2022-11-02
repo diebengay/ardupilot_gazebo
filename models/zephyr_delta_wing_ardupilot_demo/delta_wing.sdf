@@ -12,60 +12,7 @@
       -->
       <pose>0 0 0.2 0 0 0</pose>
     </include>
-    <include>
-      <uri>model://ZED_stereocamera</uri>
-      <pose>0 -0.34 0.28 0 0 4.7123889803</pose>
-    </include>
-    <link name="cam_link">
-      <pose>0 0 0 0 0 0 </pose>
-      <inertial>
-        <mass>0.01</mass>
-        <inertia>
-          <ixx>0.0001</ixx>
-          <iyy>0.0001</iyy>
-          <izz>0.0001</izz>
-        </inertia>
-      </inertial>
-      <sensor name="chase_cam_wide" type="camera">
-        <pose>0 2 1 0 0.2 -1.5717</pose>
-        <camera>
-          <horizontal_fov>1.5</horizontal_fov>
-          <image>
-            <width>1920</width>
-            <height>1080</height>
-          </image>
-          <clip>
-            <near>0.1</near>
-            <far>1000</far>
-          </clip>
-        </camera>
-        <always_on>0</always_on>
-        <update_rate>60</update_rate>
-        <visualize>false</visualize>
-      </sensor>
-    </link>
-    <joint name="camera_mount" type="fixed">
-      <child>ZED_stereocamera::link</child>
-      <parent>zephyr_delta_wing::wing</parent>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <upper>0</upper>
-          <lower>0</lower>
-        </limit>
-      </axis>
-    </joint>
-    <joint name="virtual_camera_mount" type="fixed">
-      <child>cam_link</child>
-      <parent>zephyr_delta_wing::wing</parent>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <upper>0</upper>
-          <lower>0</lower>
-        </limit>
-      </axis>
-    </joint>
+    
     <link name="skid_pad">
       <pose>0.0 -0.07 -0.02 0 0 0</pose>
         <inertial>
@@ -184,6 +131,8 @@
         <jointName>zephyr_delta_wing::flap_right_joint</jointName>
       </control>
     </plugin>
+
+    
 
   </model>
 </sdf>

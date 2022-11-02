@@ -93,5 +93,29 @@
         <pose>0 0 0 0 0 0</pose>
       </include>
     </model>
+
+    <model name="cable">
+      <static>true</static>
+      <link name="cable_link">
+        <visual name="cable_vis">
+          <pose>0 0 1.0309 0 1.5708 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>10</length>
+            </cylinder>
+          </geometry>
+        </visual>
+        <collision name="cable_col">
+          <pose>0 0 1.0309 0 1.5708 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>10</length>
+            </cylinder>
+          </geometry>
+        </collision>
+      </link>
+    </model>
   </world>
 </sdf>
